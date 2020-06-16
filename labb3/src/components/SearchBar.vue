@@ -1,7 +1,7 @@
 <template>
   <div id="SearchBar">
     <p>
-      {{ searchInfo }}
+      {{ title }}
       <a href="https://superheroapi.com/ids.html" target="_blank">SuperHeroApi</a>
     </p>
 
@@ -23,8 +23,8 @@
 export default {
   name: "SearchBar",
   computed: {
-    searchInfo() {
-      return this.$store.state.searchInfo;
+    title() {
+      return this.$store.state.title;
     }
   },
   data() {

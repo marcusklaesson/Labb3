@@ -21,12 +21,17 @@ const router = new VueRouter({
 })
 const store = new Vuex.Store({
   state: {
-    searchInfo: 'Follow this link to see all superheroes to search for: '
+    title: 'Follow this link to see all superheroes to search for: '
   }
 })
-
+const mutations = {
+  setTitle(state, title) {
+    state.title = title
+  }
+}
 new Vue({
   render: h => h(App),
+  mutations,
   router,
   store,
 }).$mount('#app')

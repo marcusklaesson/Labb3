@@ -1,11 +1,11 @@
 <template>
-  <h1>{{ mainTitle }}</h1>
+  <h1>{{title}}</h1>
 </template>
-
+i
 <script>
 export default {
   name: "Home",
-  props: ["mainTitle"]
+  props: ["title"]
 };
 </script>
 
