@@ -1,7 +1,7 @@
 <template>
   <h1>{{title}}</h1>
 </template>
-i
+
 <script>
 export default {
   name: "Home",

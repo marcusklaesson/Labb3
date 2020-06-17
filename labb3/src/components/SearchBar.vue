@@ -1,21 +1,22 @@
 <template>
   <div id="SearchBar">
     <p>
-      {{ title }}
       <a href="https://superheroapi.com/ids.html" target="_blank">SuperHeroApi</a>
     </p>
 
     <input v-model="hero" v-on:keyup.enter="onEnter" placeholder="Superhero search" />
-    <p>{{name}}</p>
-    <p>{{fullname}}</p>
-    <p>{{placeOfBirth}}</p>
-    <p>{{strength}}</p>
-    <p>{{speed}}</p>
-    <p>{{durability}}</p>
-    <p>{{intelligence}}</p>
-    <p>{{weight}}</p>
-    <p>{{height}}</p>
-    <img id="image" :src="image" />
+    <div v-if="someValue">
+      <p>{{name}}</p>
+      <p>{{fullname}}</p>
+      <p>{{placeOfBirth}}</p>
+      <p>{{strength}}</p>
+      <p>{{speed}}</p>
+      <p>{{durability}}</p>
+      <p>{{intelligence}}</p>
+      <p>{{weight}}</p>
+      <p>{{height}}</p>
+      <img id="image" :src="image" />
+    </div>
   </div>
 </template>
 
@@ -23,10 +24,16 @@
 export default {
   name: "SearchBar",
   computed: {
-    title() {
-      return this.$store.state.title;
+    someValue: {
+      get() {
+        return this.$store.state.someValue;
+      },
+      set(someValue) {
+        this.$store.commit("setBoolean", someValue);
+      }
     }
   },
+
   data() {
     return {
       hero: [],

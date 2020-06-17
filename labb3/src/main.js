@@ -19,14 +19,17 @@ const router = new VueRouter({
     path: '/'
   }]
 })
+
+
+
 const store = new Vuex.Store({
   state: {
-    title: 'Follow this link to see all superheroes to search for: '
+    someValue: true
   }
 })
 const mutations = {
-  setTitle(state, title) {
-    state.title = title
+  setBoolean(state, someValue) {
+    state.someValue = someValue
   }
 }
 new Vue({

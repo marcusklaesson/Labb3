@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Home title="The ultimate superhero search"></Home>
+
     <ul>
       <li>
         <router-link to="/">Home</router-link>
@@ -14,6 +15,7 @@
 </template>
 <script>
 import Home from "./components/Home.vue";
+
 export default {
   name: "app",
   components: {
