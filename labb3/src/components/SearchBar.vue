@@ -4,19 +4,22 @@
       <a href="https://superheroapi.com/ids.html" target="_blank">SuperHeroApi</a>
     </p>
 
-    <input v-model="hero" v-on:keyup.enter="onEnter" placeholder="Superhero search" />
-    <div v-if="someValue">
-      <p>{{name}}</p>
-      <p>{{fullname}}</p>
-      <p>{{placeOfBirth}}</p>
-      <p>{{strength}}</p>
-      <p>{{speed}}</p>
-      <p>{{durability}}</p>
-      <p>{{intelligence}}</p>
-      <p>{{weight}}</p>
-      <p>{{height}}</p>
-      <img id="image" :src="image" />
-    </div>
+    <input
+      v-model="hero"
+      v-on:keyup.enter="$store.commit('someValue'), onEnter()"
+      placeholder="Superhero search"
+    />
+    {{ someValue }} Sökningar
+    <p>{{name}}</p>
+    <p>{{fullname}}</p>
+    <p>{{placeOfBirth}}</p>
+    <p>{{strength}}</p>
+    <p>{{speed}}</p>
+    <p>{{durability}}</p>
+    <p>{{intelligence}}</p>
+    <p>{{weight}}</p>
+    <p>{{height}}</p>
+    <img id="image" :src="image" />
   </div>
 </template>
 
@@ -29,7 +32,7 @@ export default {
         return this.$store.state.someValue;
       },
       set(someValue) {
-        this.$store.commit("setBoolean", someValue);
+        this.$store.commit("someValue", someValue);
       }
     }
   },
